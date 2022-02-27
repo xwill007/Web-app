@@ -11,19 +11,44 @@
 
     <a-assets>
       <video id="video-fondo" src="videos/video_fondo.mp4" autoplay loop="true"></video>
+      <img id="foto" src="imagenes/ailoviu.jpeg">
+      <img id="textura-base" color="blue" src="imagenes/fondo-karaoke.jpg">
     </a-assets>
 
     <a-videosphere src="#video-fondo"></a-videosphere>
 
-    <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-       
-    <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-
+    <a-box position="0 3 -3" rotation="0 0 0" width="8" height="6" src="#textura-base"></a-box>  
+    <a-plane position="0 0 0" rotation="-90 0 0" width="8" height="6" src="#textura-base"></a-plane>
+    <!--
+      <a-sky color="yellow"></a-sky>
+    -->    
     
-      
-      <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 20000">
-        <a-sphere position="5 0 0" color="mediumseagreen"></a-sphere>
+    <a-entity 
+      id="lightSphere" 
+      material="shader: flat; color: #FFF"
+      light="type:directional; color:#BBB; intensity:2" 
+      rotation="0 0 0" 
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+      position="0 1 1">
+      <a-sphere 
+      position="3 3 -6"
+      >
+      </a-sphere>
+    </a-entity>
+
+    <a-entity
+      id="tablero" 
+      position="0.6 3 -2.4" 
+      >
+      <a-plane 
+        rotation="0 0 0" 
+        width="5" 
+        height="4"
+        src="#foto"
+        ></a-plane>
       </a-entity>
+
+      
 
     </a-scene>
   </body>
